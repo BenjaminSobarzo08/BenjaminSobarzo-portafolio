@@ -1,0 +1,62 @@
+footer{
+    position: fixed;
+    left: 25%;
+    top: 88%;
+    display: flex;
+    width: 50%;
+    height: 5.2rem;
+    flex-direction: column;
+    background-color: #222;
+    border-radius: 1rem;
+}
+
+.body{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a{
+    text-decoration: none;
+    color: #f4f4f4
+}
+
+.linkCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: 0.5s ease-in;
+}
+
+.linkCard img{
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 10%;
+    transition: 0.5s ease;
+}
+.linkCard p{
+    font-size: 1rem;
+}
+
+@media  screen and (max-width: 768px) {
+    footer{
+        width: 100%;
+        height: 4rem;
+        left: 0;
+        border-radius: 0;
+        top: 90%;
+    }
+
+    .linkCard img{
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+
+    .linkCard p{
+        font-size: 0.8rem;
+    }
+}

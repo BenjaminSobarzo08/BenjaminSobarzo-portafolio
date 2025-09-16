@@ -1,0 +1,52 @@
+.homeContainer{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Title{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+
+.Descripcion{
+    max-width: 50%;
+    font-size: 1.5rem;
+}
+
+.red{
+    color: #dc143c;
+}
+
+
+
+@media  screen and (max-width: 1300px) {
+    .Title{
+        font-size: 1.3rem;
+        
+    }
+    .link img{
+        width: 3rem;
+        height: 3rem;
+    }
+    .title-contact{
+        font-size: 1rem;
+    }
+}
+
+@media  screen and (max-width: 768px) {
+    .homeContainer{
+        margin-bottom: 20%;
+    }
+
+    .Title h1{
+        font-size: 2rem;
+    }
+    .Descripcion{
+        font-size: 1.3rem;
+    }
+}

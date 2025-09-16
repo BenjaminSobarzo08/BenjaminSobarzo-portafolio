@@ -1,0 +1,140 @@
+.cardContainer {
+  display: flex;
+  background-color: #1e1e1e; /* Un fondo oscuro ligeramente diferente */
+  color: #f0f0f0; /* Color del texto más claro */
+  border-radius: 15px; /* Bordes más redondeados */
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+  max-width: 800px; /* Reducimos el ancho máximo */
+  margin: 30px auto; /* Espaciado superior e inferior para destacarla */
+  transition: transform 0.3s ease-in-out; /* Animación al pasar el ratón */
+  border: 1px solid #333; /* Un borde sutil */
+  margin-bottom: 5%;
+}
+
+.cardContainer:hover {
+  transform: translateY(-5px); /* Efecto de "levantar" al pasar el ratón */
+}
+
+.imgSection {
+  flex: 1; /* Sigue ocupando la mitad */
+  min-width: 300px; /* Aseguramos un ancho mínimo para la imagen */
+}
+
+.imgSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9); /* Oscurece un poco la imagen para que el texto resalte si hay superposición */
+}
+
+.cardBody {
+    display: flex; /* Mantenemos el flex para la estructura principal */
+    flex: 1; /* Permite que el cuerpo ocupe el resto del espacio */
+}
+
+
+.textArea {
+  flex: 1;
+  padding: 25px 30px; /* Ajustamos el padding para más espacio interno */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px; /* Espacio entre los párrafos */
+  text-align: left; /* Alineamos el texto a la izquierda */
+}
+
+.textArea h2 {
+  font-size: 1.8rem; /* Tamaño de título ligeramente más pequeño */
+  margin-bottom: 10px;
+  color: #00bfff; /* Un color de acento para el título */
+}
+
+.textArea p {
+  font-size: 0.95rem; /* Texto más compacto */
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: flex-start; /* Alinea los íconos a la izquierda, junto al texto */
+  align-items: center; /* Centra verticalmente los íconos */
+  padding: 15px 30px; /* Padding ajustado */
+  border-top: 1px solid #333; /* Separador sutil */
+  background-color: #2a2a2a; /* Un fondo ligeramente diferente para el footer */
+  margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+.cardFooter .link {
+    margin-right: 15px; /* Espacio entre los enlaces */
+}
+
+.cardFooter .link:last-child {
+    margin-right: 0; /* No hay margen a la derecha del último enlace */
+}
+
+.link img {
+  width: 28px; /* Íconos un poco más grandes */
+  height: 28px;
+  filter: invert(100%); /* Hace los íconos blancos si son oscuros */
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.link img:hover {
+  transform: scale(1.1);
+  filter: invert(70%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(120%); /* Efecto al pasar el ratón para los íconos */
+}
+
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .cardContainer {
+    flex-direction: column; /* Apila el contenido en pantallas pequeñas */
+    max-width: 90%; /* Ajusta el ancho en móviles */
+    margin: 20px auto;
+  }
+  .cardBody{
+    flex-direction: column;
+  }
+
+  .imgSection {
+    min-width: unset; /* Reinicia el ancho mínimo */
+    height: 200px; /* Altura fija para la imagen en móviles */
+  }
+
+  .textArea {
+    padding: 20px;
+    text-align: center; /* Centra el texto en móviles */
+  }
+
+  .textArea h2 {
+      font-size: 1.5rem;
+  }
+
+  .textArea p {
+      font-size: 0.9rem;
+  }
+
+  .cardFooter {
+    justify-content: center; /* Centra los íconos en pantallas pequeñas */
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+    .textArea {
+        padding: 15px;
+    }
+    .textArea h2 {
+        font-size: 1.3rem;
+    }
+    .textArea p {
+        font-size: 0.85rem;
+    }
+    .link img {
+        width: 24px;
+        height: 24px;
+    }
+}
