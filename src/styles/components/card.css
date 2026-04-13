@@ -1,140 +1,223 @@
 .cardContainer {
-  display: flex;
-  background-color: #1e1e1e; /* Un fondo oscuro ligeramente diferente */
-  color: #f0f0f0; /* Color del texto más claro */
-  border-radius: 15px; /* Bordes más redondeados */
+  width: min(100%, 1000px);
+  margin: 34px auto 5%;
+  border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
-  max-width: 800px; /* Reducimos el ancho máximo */
-  margin: 30px auto; /* Espaciado superior e inferior para destacarla */
-  transition: transform 0.3s ease-in-out; /* Animación al pasar el ratón */
-  border: 1px solid #333; /* Un borde sutil */
-  margin-bottom: 5%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top left, rgba(255, 185, 96, 0.16), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(0, 191, 255, 0.14), transparent 30%),
+    linear-gradient(135deg, #121416 0%, #181c20 50%, #101214 100%);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cardContainer:hover {
-  transform: translateY(-5px); /* Efecto de "levantar" al pasar el ratón */
-}
-
-.imgSection {
-  flex: 1; /* Sigue ocupando la mitad */
-  min-width: 300px; /* Aseguramos un ancho mínimo para la imagen */
-}
-
-.imgSection img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: brightness(0.9); /* Oscurece un poco la imagen para que el texto resalte si hay superposición */
+  transform: translateY(-6px);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .cardBody {
-    display: flex; /* Mantenemos el flex para la estructura principal */
-    flex: 1; /* Permite que el cuerpo ocupe el resto del espacio */
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(0, 1fr);
+  align-items: start;
 }
 
+.imgSection {
+  padding: 24px;
+}
+
+.imgFrame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #0d0f11;
+  box-shadow:
+    0 20px 36px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
 
 .textArea {
-  flex: 1;
-  padding: 25px 30px; /* Ajustamos el padding para más espacio interno */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 10px; /* Espacio entre los párrafos */
-  text-align: left; /* Alineamos el texto a la izquierda */
+  gap: 18px;
+  padding: 30px 30px 28px 6px;
+  color: #f4f6f8;
 }
 
 .textArea h2 {
-  font-size: 1.8rem; /* Tamaño de título ligeramente más pequeño */
-  margin-bottom: 10px;
-  color: #00bfff; /* Un color de acento para el título */
+  margin: 0;
+  font-size: clamp(1.55rem, 2vw, 2rem);
+  line-height: 1.1;
+  color: #ffffff;
 }
 
-.textArea p {
-  font-size: 0.95rem; /* Texto más compacto */
-  line-height: 1.6;
-  margin-bottom: 5px;
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.techItem {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #8fdcff;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.projectDescription,
+.roleBlock p {
+  margin: 0;
+  color: rgba(244, 246, 248, 0.84);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.roleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.rol {
+  margin: 0;
+  color: #f6d39a;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .cardFooter {
   display: flex;
-  justify-content: flex-start; /* Alinea los íconos a la izquierda, junto al texto */
-  align-items: center; /* Centra verticalmente los íconos */
-  padding: 15px 30px; /* Padding ajustado */
-  border-top: 1px solid #333; /* Separador sutil */
-  background-color: #2a2a2a; /* Un fondo ligeramente diferente para el footer */
-  margin-top: auto; /* Empuja el footer hacia abajo */
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
 }
 
-.cardFooter .link {
-    margin-right: 15px; /* Espacio entre los enlaces */
+.link {
+  text-decoration: none;
 }
 
-.cardFooter .link:last-child {
-    margin-right: 0; /* No hay margen a la derecha del último enlace */
+.linkButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f5f7f8;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.linkButton:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.linkButtonPrimary {
+  background: linear-gradient(135deg, rgba(255, 185, 96, 0.22), rgba(0, 191, 255, 0.16));
+}
+
+.linkButtonSecondary {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.linkButton span {
+  font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .link img {
-  width: 28px; /* Íconos un poco más grandes */
-  height: 28px;
-  filter: invert(100%); /* Hace los íconos blancos si son oscuros */
-  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+  width: 18px;
+  height: 18px;
+  filter: invert(100%);
 }
 
-.link img:hover {
-  transform: scale(1.1);
-  filter: invert(70%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(120%); /* Efecto al pasar el ratón para los íconos */
-}
-
-
-/* Media Queries para responsividad */
-@media (max-width: 768px) {
+@media (max-width: 940px) {
   .cardContainer {
-    flex-direction: column; /* Apila el contenido en pantallas pequeñas */
-    max-width: 90%; /* Ajusta el ancho en móviles */
-    margin: 20px auto;
+    width: min(100%, 92%);
   }
-  .cardBody{
-    flex-direction: column;
+
+  .cardBody {
+    grid-template-columns: 1fr;
   }
 
   .imgSection {
-    min-width: unset; /* Reinicia el ancho mínimo */
-    height: 200px; /* Altura fija para la imagen en móviles */
+    padding: 18px 18px 0;
+  }
+
+  .imgFrame {
+    aspect-ratio: 16 / 9;
   }
 
   .textArea {
-    padding: 20px;
-    text-align: center; /* Centra el texto en móviles */
-  }
-
-  .textArea h2 {
-      font-size: 1.5rem;
-  }
-
-  .textArea p {
-      font-size: 0.9rem;
-  }
-
-  .cardFooter {
-    justify-content: center; /* Centra los íconos en pantallas pequeñas */
-    padding: 15px;
+    padding: 22px 18px 22px;
   }
 }
 
 @media (max-width: 480px) {
-    .textArea {
-        padding: 15px;
-    }
-    .textArea h2 {
-        font-size: 1.3rem;
-    }
-    .textArea p {
-        font-size: 0.85rem;
-    }
-    .link img {
-        width: 24px;
-        height: 24px;
-    }
+  .cardContainer {
+    border-radius: 22px;
+    margin: 24px auto;
+  }
+
+  .imgSection {
+    padding: 14px 14px 0;
+  }
+
+  .imgFrame {
+    border-radius: 18px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .textArea {
+    gap: 14px;
+    padding: 18px 14px 18px;
+  }
+
+  .textArea h2 {
+    font-size: 1.35rem;
+  }
+
+  .projectDescription,
+  .roleBlock p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .techItem {
+    font-size: 0.78rem;
+    padding: 7px 10px;
+  }
+
+  .roleBlock {
+    padding: 16px;
+  }
+
+  .linkButton {
+    width: 100%;
+    justify-content: center;
+  }
 }

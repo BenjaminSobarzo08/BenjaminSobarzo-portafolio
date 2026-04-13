@@ -1,14 +1,49 @@
 import '../styles/proyectos.css'
 import Card from '../components/card'
 
-const Proyectos = ()=>{
-    return(
+const Proyectos = () => {
+    return (
         <div className="projects-container">
             <div className="Title"><h1>Proyectos <span className='red'>Destacados</span></h1></div>
-            <Card titulo="Tienda Online (Proyecto de Carrera)" imagen="/projects/Vite-React-11-18-2024_09_44_AM.png" descripcion="Un sistema de comercio electrónico que simulaba una tienda online, con roles de administrador y usuario, carrito de compras y proceso de compra ficticio." rol="Me enfoqué principalmente en el desarrollo del frontend con React, creando componentes reutilizables y asegurando la conectividad con el backend. También contribuí en la documentación del sistema para un desarrollo más limpio y organizado." linkGit="https://github.com/BenjaminSobarzo08/Tienda-Online" linkPage="https://tienda-online-eight-red.vercel.app/"/>
-            <Card titulo="Biblioteca Áulica (proyecto de carrera)" imagen="/projects/Biblioteca Aulica vista.png" descripcion="Un sistema de gestión de bibliotecas diseñado para facilitar la usabilidad tanto para estudiantes jóvenes como adultos." rol="Colaboré en el análisis de requerimientos, enfocándome en la usabilidad del sistema. En el desarrollo del backend, trabajé en el equipo que construyó la API REST usando Node.js y Express. También me encargué de la integración con Cloudinary para el almacenamiento de las portadas de los libros." linkGit="https://github.com/TurcoDev/biblioteca-back" linkPage="https://biblioteca-front.web.app/"/>
-            <Card titulo="Inmobiliaria (Proyecto Independiente)" imagen="/projects/Cecilia-Gómez-Inmobiliaria vista.png" descripcion="Una página web para una inmobiliaria que permite a los usuarios buscar propiedades, visualizar detalles y contactar a la empresa." rol="Fui responsable del frontend y del diseño de la UI, enfocándome en crear una interfaz atractiva y fácil de usar. En el backend, desarrollé la API de búsqueda con Node.js y configuré la funcionalidad de envío de correos electrónicos a través de Nodemailer. Este proyecto me ayudó a desarrollar habilidades de comunicación y coordinación con mi compañero y el cliente." linkGit="https://github.com/AdrianC89/InmobiliariaCecilia" linkPage="https://inmobiliariacecilia.onrender.com/"/>
-            <Card titulo="Music Service (Proyecto Grupal)" imagen="/projects/Music-Service capture.png" descripcion="Un sistema que simulaba una biblioteca musical, permitiendo a los usuarios crear y gestionar listas de canciones, con la opción de hacerlas públicas para usuarios premium." rol="Trabajé con un compañero en la implementación del proyecto, utilizando la arquitectura MVC con PHP. Usé el motor de plantillas Smarty para la interfaz y PostgreSQL para la base de datos." linkGit="https://github.com/BenjaminSobarzo08/MusicServiceWeb"/>
+
+            <Card
+                titulo="Tienda Online (Proyecto de Carrera)"
+                imagen="/projects/Vite-React-11-18-2024_09_44_AM.png"
+                tecnologias={["React", "Node.js", "Express", "JWT", "Cloudinary"]}
+                descripcion="E-commerce con autenticacion, carrito, gestion de productos y flujo de compra ficticio."
+                rol="Desarrolle el frontend en React y luego amplie el proyecto trabajando tambien en backend, base de datos, seguridad con JWT, control de stock y deploy."
+                linkGit="https://github.com/BenjaminSobarzo08/Tienda-Online"
+                linkPage="https://tienda-online-eight-red.vercel.app/"
+            />
+
+            <Card
+                titulo="Biblioteca Aulica (Proyecto de Carrera)"
+                imagen="/projects/Biblioteca Aulica vista.png"
+                tecnologias={["React", "Node.js", "Express", "Cloudinary", "PostgreSQL"]}
+                descripcion="Sistema de gestion de bibliotecas pensado para una experiencia clara y accesible para distintos perfiles de usuario."
+                rol="Participe en el analisis funcional, colabore en el desarrollo de la API REST y me encargue de integrar Cloudinary para las portadas de los libros."
+                linkGit="https://github.com/TurcoDev/biblioteca-back"
+                linkPage="https://biblioteca-front.web.app/"
+            />
+
+            <Card
+                titulo="Inmobiliaria (Proyecto Independiente)"
+                imagen="/projects/Cecilia-Gómez-Inmobiliaria vista.png"
+                tecnologias={[ "Node.js", "Express", "Nodemailer", "MongoDB"]}
+                descripcion="Sitio web inmobiliario con buscador de propiedades, fichas detalladas y contacto directo con la empresa."
+                rol="Me ocupe del frontend, del diseño de interfaz y de la API de busqueda. Tambien implemente el envio de correos y coordine el trabajo con cliente y compañero."
+                linkGit="https://github.com/AdrianC89/InmobiliariaCecilia"
+                linkPage="https://inmobiliariacecilia.onrender.com/"
+            />
+
+            <Card
+                titulo="Music Service (Proyecto Grupal)"
+                imagen="/projects/Music-Service capture.png"
+                tecnologias={["PHP", "Smarty", "PostgreSQL", "MVC"]}
+                descripcion="Aplicacion web para gestionar listas musicales y compartirlas segun el tipo de usuario."
+                rol="Trabaje junto a un compañero implementando la arquitectura MVC, la interfaz con Smarty y la persistencia de datos con PostgreSQL."
+                linkGit="https://github.com/BenjaminSobarzo08/MusicServiceWeb"
+            />
         </div>
     )
 }
